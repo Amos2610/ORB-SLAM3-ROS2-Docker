@@ -498,3 +498,71 @@ ls
 tmux
 ls
 ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+cd ros_env_vars.sh 
+cd colcon_ws/
+ls
+colcon build
+cd
+cd /home/
+ls
+cd orb/
+ls
+cd ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+ll src/
+colcon build --symlink-install
+ls -l build/slam_msgs/ament_cmake_python/slam_msgs
+cd src/
+ls
+cd slam_msgs/
+ls
+tree
+ls
+cd msg/
+ls
+cd ../
+ls srv
+cat CMakeLists.txt 
+cat package.xml 
+cd
+cd colcon_ws/
+ls
+rm -rf build/ install/ log/
+grep -R "ament_cmake_python" -n src || true
+find src -maxdepth 3 -type f -name "setup.py" -o -type d -name "slam_msgs" | sed 's/^/FOUND: /'
+colcon build --symlink-install --cmake-clean-cache --packages-select slam_msgs
+colcon build --symlink-install
+source install/setup.bash 
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+cd colcon_ws/
+source install/setup.bash 
+ls
+colcon build --symlink-install
+rm -rf install/ build/ log/
+colcon build --symlink-install --packages-select slam_msgs
+colcon build --symlink-install 
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+cd colcon_ws/
+source install/setup.bash 
+ros2 launch realsense2_camera rs_launch.py 
+colcon build --symlink-install
+cd /home/orb/ORB_SLAM3/ && sudo chmod +x build.sh && ./build.sh
+cd /root/colcon_ws/ && colcon build --symlink-install && source install/setup.bash
+ls
+ls src/
+ls
+cd
+ls
+cat launch_slam.sh 
+cd shell_scripts/
+ls
+cat launch_orb.sh 
+cat multi_orb.sh 
+ls
+./ws_build.sh 
+cd
+cd colcon_ws/
+ls
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
