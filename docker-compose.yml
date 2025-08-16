@@ -1,7 +1,12 @@
-version: "3"
+# version: "3"
 services:
   orb_slam3_22_humble:
     image: orb-slam3-humble:22.04
+    build:
+      context: .
+      dockerfile: Dockerfile       # ファイル名が Dockerfile でないなら要修正
+      args:
+        USE_CI: "true"             # 使うなら
     volumes:
       #full dev
       - /dev:/dev:rw
@@ -17,6 +22,7 @@ services:
       - ./orb_slam3_map_generator/:/root/colcon_ws/src/orb_slam3_map_generator/
       - ./slam_msgs/:/root/colcon_ws/src/slam_msgs/
       - ./ORB_SLAM3/:/home/orb/ORB_SLAM3/
+      - ./realsense-ros/:/root/colcon_ws/src/realsense-ros/
     privileged: true
     network_mode: host
     ipc: host

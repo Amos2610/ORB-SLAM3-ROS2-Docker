@@ -26,6 +26,11 @@ RUN apt-get install -y \
     ca-certificates\
     software-properties-common
 
+# === librealsense APT repo を追加してインストール ===
+RUN apt-get update && apt-get install -y \
+      ros-humble-librealsense2* \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN apt update
 
 
@@ -61,6 +66,7 @@ COPY ORB_SLAM3 /home/orb/ORB_SLAM3
 COPY orb_slam3_ros2_wrapper /root/colcon_ws/src/orb_slam3_ros2_wrapper
 COPY orb_slam3_map_generator /root/colcon_ws/src/orb_slam3_map_generator
 COPY slam_msgs /root/colcon_ws/src/slam_msgs
+COPY realsense-ros /root/colcon_ws/src/realsense-ros
 
 # Build ORB-SLAM3 with its dependencies.
 RUN if [ "$USE_CI" = "true" ]; then \
