@@ -1,3 +1,7 @@
 [submodule "ORB_SLAM3"]
 	path = ORB_SLAM3
 	url = https://github.com/suchetanrs/ORB_SLAM3
+[submodule "realsense-ros"]
+	path = realsense-ros
+	url = git@github.com:IntelRealSense/realsense-ros.git
+	branch = ros2-development
