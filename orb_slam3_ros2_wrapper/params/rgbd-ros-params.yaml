@@ -8,7 +8,7 @@ ORB_SLAM3_RGBD_ROS2:
     robot_base_frame: base_footprint
     global_frame: map
     odom_frame: odom
-    rgb_image_topic_name: /camera/camera/color/image_raw
+    rgb_image_topic_name: /camera/camera/color/image_rect_raw
     depth_image_topic_name: /camera/camera/depth/image_rect_raw
     imu_topic_name: imu #Not used in this variant. Try RGB_IMU to use this information.
     odom_topic_name: ground_truth_pose #Used if odometry_mode parameter is set to true. (Set to ground_truth_pose for pose from simulation example. You can choose the topic you want)
